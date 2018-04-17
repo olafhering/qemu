@@ -962,6 +962,7 @@ for opt do
   --firmwarepath=*) firmwarepath="$optarg"
   ;;
   --host=*|--build=*|\
+  --program-prefix=*|--exec-prefix=*|\
   --disable-dependency-tracking|\
   --sbindir=*|--sharedstatedir=*|\
   --oldincludedir=*|--datarootdir=*|--infodir=*|\
