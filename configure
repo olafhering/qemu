@@ -698,6 +698,7 @@ for opt do
   --static) static="yes"
   ;;
   --host=*|--build=*|\
+  --program-prefix=*|--exec-prefix=*|\
   --disable-dependency-tracking|\
   --sbindir=*|--sharedstatedir=*|\
   --oldincludedir=*|--datarootdir=*|--infodir=*|\
