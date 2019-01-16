@@ -42,7 +42,7 @@ void egl_dmabuf_release_texture(QemuDmaBuf *dmabuf);
 
 #endif
 
-EGLSurface qemu_egl_init_surface_x11(EGLContext ectx, Window win);
+EGLSurface qemu_egl_init_surface_x11(EGLContext ectx, EGLNativeWindowType win);
 
 int qemu_egl_init_dpy_x11(EGLNativeDisplayType dpy);
 int qemu_egl_init_dpy_mesa(EGLNativeDisplayType dpy);
