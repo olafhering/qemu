@@ -230,9 +230,11 @@ static QCryptoCipher *qcrypto_cipher_ctx_new(QCryptoCipherAlgorithm alg,
     case QCRYPTO_CIPHER_MODE_ECB:
         gcrymode = GCRY_CIPHER_MODE_ECB;
         break;
+#if GCRYPT_VERSION_NUMBER > 0x010601
     case QCRYPTO_CIPHER_MODE_XTS:
         gcrymode = GCRY_CIPHER_MODE_XTS;
         break;
+#endif
     case QCRYPTO_CIPHER_MODE_CBC:
         gcrymode = GCRY_CIPHER_MODE_CBC;
         break;
