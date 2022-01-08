@@ -1182,7 +1182,7 @@ if get_option('gnutls').enabled() or (get_option('gnutls').auto() and have_syste
     gnutls = gnutls_crypto
   else
     # Our min version if all we need is TLS
-    gnutls = dependency('gnutls', version: '>=3.5.18',
+    gnutls = dependency('gnutls',
                         method: 'pkg-config',
                         required: get_option('gnutls'),
                         kwargs: static_kwargs)
