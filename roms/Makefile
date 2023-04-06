@@ -158,12 +158,15 @@ edk2-version: edk2
 	fi
 
 efi: edk2-version
-	$(PYTHON) edk2-build.py --config edk2-build.config \
+	$(PYTHON) edk2-build.py --config edk2-build.config -m x86 $(EDK2_JOBS) \
 		--version-override "$(EDK2_STABLE)$(FIRMWARE_EXTRAVERSION)" \
 		--release-date "$(EDK2_DATE)" \
 		--silent --no-logs
 	rm -f ../pc-bios/edk2-*.fd.bz2
 	bzip2 --verbose ../pc-bios/edk2-*.fd
+
+edk2-basetools:
+	$(PYTHON) edk2-build.py --config edk2-build.config -m none $(EDK2_JOBS)
 
 opensbi32-generic:
 	$(MAKE) -C opensbi \
