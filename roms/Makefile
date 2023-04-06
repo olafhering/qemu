@@ -158,11 +158,13 @@ edk2-version: edk2
 
 edk2-basetools: edk2-version
 	$(PYTHON) edk2-build.py --config edk2-build.config \
+		-m none $(EDK2_JOBS) \
 		--silent --no-logs \
 		--match none # build only basetools
 
 efi: edk2-version
 	$(PYTHON) edk2-build.py --config edk2-build.config \
+		-m x86 $(EDK2_JOBS) \
 		--version-override "$(EDK2_STABLE)-for-qemu" \
 		--release-date "$(EDK2_DATE)" \
 		--silent --no-logs
