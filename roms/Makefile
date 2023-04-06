@@ -147,11 +147,14 @@ skiboot:
 	cp skiboot/skiboot.lid ../pc-bios/skiboot.lid
 
 efi:
-	$(PYTHON) edk2-build.py --config edk2-build.config \
+	$(PYTHON) edk2-build.py --config edk2-build.config -m x86 $(EDK2_JOBS) \
 		--version-override "edk2-stable202302-for-qemu" \
 		--release-date "03/01/2023"
 	rm -f ../pc-bios/edk2-*.fd.bz2
 	bzip2 --verbose ../pc-bios/edk2-*.fd
+
+edk2-basetools:
+	$(PYTHON) edk2-build.py --config edk2-build.config -m none $(EDK2_JOBS)
 
 opensbi32-generic:
 	$(MAKE) -C opensbi \
